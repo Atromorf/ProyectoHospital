@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/agregaM.css">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: '{{ message }}',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            </script>
+
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <section class="agregando">
+        <h4>Agrega Medico</h4>
+    <form action="/agregarM" method="POST">
+    <div><p><input required class="controls" type="text" name="txtnombrem" placeholder="Escribe el Nombe del Doctor"></p></div>
+    <div><p><input minlength="13" maxlength="13" required class="controls" type="text" name="txtrfc" placeholder="Escribe su RFC"></p></div>
+    <div><p><input required class="controls" type="text" name="txtcedula" placeholder="Escribe su Cedula"></p></div>
+    <div><p><input required class="controls" type="number" name="txtrol" placeholder="Escribe su Rol"></p></div>
+    <div><p><input required class="controls" type="text" name="txtpassword" placeholder="Escribe su Password"></p></div>
+    <div><p><input required class="controls" type="text" name="txtcorreo" placeholder="Escribe su Correo"></p></div>
+    
+    <button class="botons" type="submit" value="Guardar datos">Guardar Datos</button>
+    </form>
+    </section>
+    
+</body>
+</html>

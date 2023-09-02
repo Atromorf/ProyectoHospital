@@ -1,0 +1,57 @@
+body{
+    background-color: red;
+    background-image: url(https://cienciaybiologia.com/wp-content/uploads/2021/08/sistema-nervioso-humano-dibujo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logeando{
+    width: 400px;
+    background: rgb(0, 0, 0, 0.5);
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.logeando h4{
+    font-size: 23px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controls{
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.logeando .botons{
+    width: 100%;
+    background: black;
+    padding: 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;    
+}
+
+
+

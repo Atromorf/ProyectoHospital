@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edicion</title>
+        <link rel="stylesheet" href="../static/agregaP.css">
+    </head>
+    <body>
+
+        <section class="agregand">
+            <h4>Editas al Paciente</h4>
+            <form action="/updateP/{{ medic.0 }}" method="POST">
+            <input required class="controls" type="text" name="txtnombre" placeholder="Nombre" value="{{ medic.1 }}">
+            <input required class="controls" type="date" name="txtfechan" placeholder="Fecha Nacimiento" value="{{ medic.2 }}">
+            <input class="controls" type="text" name="txtenfermedades" placeholder="Enfermedades" value="{{ medic.3 }}">
+            <input class="controls" type="text" name="txtalergias" placeholder="Alergias" value="{{ medic.4 }}">
+            <input class="controls" type="text" name="txtantecedentes" placeholder="Antecedentes" value="{{ medic.5 }}">
+            <input readonly class="controls" type="number" name="txtmedico" placeholder="Medico" value="{{ medic.6 }}">
+    
+    <button class="botons" type="submit">Guardar datos</button>
+
+</section>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos personales</title>
+    <link rel="stylesheet" href="../static/dperso.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    {% extends 'loyout.html' %}
+    {% block body %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: '{{ message }}',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            </script>
+
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <section class="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <td>Paciente: </td>
+                    <td>Fecha: </td>
+                    <td>Fecha Nacimiento: </td>
+                    <td>Altura: </td>
+                    <td>Peso: </td>
+                    <td>Temperatura: </td>
+                    <td>Latidos por minuto: </td>
+                    <td>Saturacion de oxigeno y glucosa: </td>
+                    <td>Editar </td>
+                    <td>Eliminar </td>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {%for bu in Buscose%}
+                <tr>
+                    <td>{{ bu.1 }}</td>
+                    <td>{{ bu.2 }}</td>
+                    <td>{{ bu.3 }}</td>
+                    <td>{{ bu.4 }}</td>
+                    <td>{{ bu.5 }}</td>
+                    <td>{{ bu.6 }}</td>
+                    <td>{{ bu.7 }}</td>
+                    <td>{{ bu.8 }}</td>
+                    <td>
+                        <a href="/editarD/{{ bu.0 }}"><button type="button" class="btn btn-primary">Editar</button></a>
+                    </td>
+                    <td>
+                        <a href="/eliminarP/{{ bu.0 }}"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                    </td>
+                </tr>
+                {%endfor%}
+        
+        </table>
+
+        <section class="agregand">
+            <a href="/agregm"><button type="button" class="btn btn-success">Agregar</button></a>
+            <a href="/receta"><button type="button" class="btn btn-success">Visualizar las Recetas</button></a> 
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>    
+
+    {% endblock %}
+</body>
+</html>

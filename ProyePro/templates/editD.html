@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edicion</title>
+        <link rel="stylesheet" href="../static/agregaP.css">
+    </head>
+    <body>
+
+        <section class="agregand">
+            <h4>Editas datos Personales</h4>
+            <form action="/updateD/{{ med.0 }}" method="POST">
+                <input class="controls" type="date" name="txtfechad" placeholder="Fecha del dia" value="{{ med.2 }}">
+                <input class="controls" type="text" name="txtaltura" placeholder="Altura" value="{{ med.4 }}">
+                <input class="controls" type="number" name="txtpeso" placeholder="Peso" value="{{ med.5 }}">
+                <input class="controls" type="number" name="txttemperatura" placeholder="Temperatura" value="{{ med.6 }}">
+                <input class="controls" type="number" name="txtlatidos" placeholder="Latidos" value="{{ med.7 }}">
+                <input class="controls" type="number" name="txtoxigeno" placeholder="Saturacion de Oxigeno" value="{{ med.8 }}">
+    
+    <button class="botons" type="submit">Guardar datos</button>
+
+</section>
+
+</form>
+</body>
+</html>

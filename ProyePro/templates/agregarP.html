@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/agregaP.css">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: '{{ message }}',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            </script>
+
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <section class="agregand">
+        <h4>Agrega Paciente</h4>
+    <form action="/agregarP" method="POST">
+    <div><p><input required class="controls" type="text" name="txtnombre" placeholder="Escribe el Nombe del Paciente"></p></div>
+    <div><p><input required class="controls" type="date" name="txtfechan" placeholder="Escribe su Fecha de nacimiento"></p></div>
+    <div><p><input class="controls" type="text" name="txtenfermedades" placeholder="Escribe sus Enfermedades"></p></div>
+    <div><p><input class="controls" type="text" name="txtalergias" placeholder="Escribe sus Alergias"></p></div>
+    <div><p><input class="controls" type="text" name="txtantecedentes" placeholder="Escribe sus Antecedentes"></p></div>
+    <div><p><input required class="controls" type="text" name="txtmedico" placeholder="Escribe el numero del medico"></p></div>
+    <h4>Datos Pesonales</h4>
+    <div><p><input required class="controls" type="date" name="txtfechad" placeholder="Escribe la Fecha del dia"></p></div>
+    <div><p><input class="controls" type="text" name="txtaltura" placeholder="Escribe la Altura del paciente"></p></div>
+    <div><p><input class="controls" type="number" name="txtpeso" placeholder="Escribe el Peso del paciente"></p></div>
+    <div><p><input class="controls" type="number" name="txttemperatura" placeholder="Escribe la temperatura del paciente"></p></div>
+    <div><p><input class="controls" type="number" name="txtlatidos" placeholder="Escribe los latidos del paciente"></p></div>
+    <div><p><input class="controls" type="number" name="txtoxigeno" placeholder="Escribe la saturacion de oxigeno"></p></div>
+    <h4>Diagnostico</h4>
+    <textarea class="controls" type="text" name="txtdx" placeholder="Escribe el Diagnostico"></textarea>
+    <textarea class="controls" type="text" name="txtsintomas" placeholder="Escribe sus sintomas"></textarea>
+    <textarea class="controls" type="text" name="txtestudio" placeholder="Escribe su Estudio"></textarea>
+    <textarea class="controls" type="text" name="txttratamiento" placeholder="Escribe su Tratamiento"></textarea>
+    
+    <button class="botons" type="submit" value="Guardar datos">Guardar Datos</button>
+    </form>
+    </section>
+    
+</body>
+</html>
